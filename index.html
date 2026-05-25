@@ -767,9 +767,7 @@ input[type=range] { accent-color: var(--rose-deep); width: 100%; }
 <nav class="nav-outer">
   <div class="nav">
     <button class="nav-btn active" onclick="goTab('today',this)">Today</button>
-    <button class="nav-btn" onclick="goTab('cals',this)">Calories</button>
     <button class="nav-btn" onclick="goTab('move',this)">Movement</button>
-    <button class="nav-btn" onclick="goTab('hydrate',this)">Water</button>
     <button class="nav-btn" onclick="goTab('track',this)">Progress</button>
     <button class="nav-btn" onclick="goTab('myplan',this)">The Plan</button>
   </div>
@@ -782,8 +780,6 @@ input[type=range] { accent-color: var(--rose-deep); width: 100%; }
   <span class="deco-text">you're doing amazing, bestie ✦</span>
 
   <div class="stats-grid">
-    <div class="stat-box"><div class="stat-num" id="s-cal">0</div><div class="stat-label">calories logged</div></div>
-    <div class="stat-box sky"><div class="stat-num" id="s-water">0</div><div class="stat-label">bottles of water</div></div>
     <div class="stat-box sage"><div class="stat-num" id="s-ex">0</div><div class="stat-label">exercises done</div></div>
     <div class="stat-box gold"><div class="stat-num" id="s-habits">0</div><div class="stat-label">habits checked</div></div>
   </div>
@@ -793,105 +789,13 @@ input[type=range] { accent-color: var(--rose-deep); width: 100%; }
     <div class="card-title">Today's non-negotiables</div>
     <div class="habit-row"><button class="pill-check" onclick="chk(this,'d1')">✓</button><span class="habit-text">🍋 drank warm lemon water on empty stomach</span></div>
     <div class="habit-row"><button class="pill-check" onclick="chk(this,'d2')">✓</button><span class="habit-text">💧 hit my water goal for today</span></div>
-    <div class="habit-row"><button class="pill-check" onclick="chk(this,'d3')">✓</button><span class="habit-text">💪 got 85g+ protein today</span></div>
     <div class="habit-row"><button class="pill-check" onclick="chk(this,'d4')">✓</button><span class="habit-text">🧘 did my 1-minute plank</span></div>
-    <div class="habit-row"><button class="pill-check" onclick="chk(this,'d5')">✓</button><span class="habit-text">🚫 avoided sugary drinks & snacks</span></div>
     <div class="habit-row"><button class="pill-check" onclick="chk(this,'d6')">✓</button><span class="habit-text">🏃 completed my workout</span></div>
-    <div class="habit-row"><button class="pill-check" onclick="chk(this,'d7')">✓</button><span class="habit-text">😴 in bed by midnight</span></div>
-  </div>
-
-  <div class="card">
-    <div class="card-eyebrow">today's snapshot</div>
-    <div class="card-title">Calories & Protein</div>
-    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
-      <span style="font-size:12px;color:var(--latte);letter-spacing:0.05em;">calories eaten vs 1,400 goal</span>
-      <span style="font-size:16px;font-family:'Cormorant Garamond',serif;" id="snap-cal-txt">0 / 1,400</span>
-    </div>
-    <div class="prog-wrap"><div class="prog-fill" id="snap-cal-bar" style="width:0%"></div></div>
-    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;margin-bottom:4px;">
-      <span style="font-size:12px;color:var(--latte);letter-spacing:0.05em;">protein vs 85g goal</span>
-      <span style="font-size:16px;font-family:'Cormorant Garamond',serif;" id="snap-prot-txt">0 / 85g</span>
-    </div>
-    <div class="prog-wrap"><div class="prog-fill sky-fill" id="snap-prot-bar" style="width:0%"></div></div>
-    <p style="font-size:11px;color:var(--latte);margin-top:10px;">log meals in the calories tab to update ✦</p>
-  </div>
-
-  <div class="card">
-    <div class="card-eyebrow">quick log</div>
-    <div class="card-title">Fast Actions</div>
-    <div style="display:flex;gap:8px;flex-wrap:wrap;">
-      <button class="btn btn-outline" onclick="qWater()">+ water bottle</button>
-      <button class="btn btn-outline" onclick="goTab('cals', document.querySelectorAll('.nav-btn')[1])">+ log meal</button>
-      <button class="btn btn-outline" onclick="goTab('move', document.querySelectorAll('.nav-btn')[2])">log workout</button>
-    </div>
+    <div class="habit-row" style="border:none"><button class="pill-check" onclick="chk(this,'d8')">✓</button><span class="habit-text">📱 logged today in Cal+</span></div>
   </div>
 </div>
 
-<!-- ═══════════ CALORIES ═══════════ -->
-<div id="cals" class="section">
-  <span class="deco-text">fuel your body like the main character you are ✦</span>
 
-  <div class="card">
-    <div class="card-eyebrow">food diary</div>
-    <div class="card-title">Log a Meal</div>
-    <div style="display:grid;gap:10px;margin-bottom:12px;">
-      <div>
-        <label class="input-label">food name</label>
-        <input type="text" id="fn" placeholder="e.g. greek yogurt + honey">
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
-        <div>
-          <label class="input-label">calories</label>
-          <input type="number" id="fc" placeholder="180" min="0">
-        </div>
-        <div>
-          <label class="input-label">protein (g)</label>
-          <input type="number" id="fp" placeholder="17" min="0">
-        </div>
-        <div>
-          <label class="input-label">meal</label>
-          <select id="fm"><option>Breakfast</option><option>Lunch</option><option>Dinner</option><option>Snack</option></select>
-        </div>
-      </div>
-      <button class="btn btn-rose" onclick="addFood()" style="width:100%;">add to diary</button>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-eyebrow">today's totals</div>
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-      <div>
-        <span style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--rose-deep);" id="cal-tot">0</span>
-        <span style="font-size:12px;color:var(--latte);"> / 1,400 cal</span>
-      </div>
-      <div style="text-align:right;">
-        <span style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#7aadc4;" id="prot-tot">0</span>
-        <span style="font-size:12px;color:var(--latte);">g / 85g protein</span>
-      </div>
-    </div>
-    <div class="prog-wrap"><div class="prog-fill" id="cbar" style="width:0%"></div></div>
-    <div class="prog-wrap"><div class="prog-fill sky-fill" id="pbar" style="width:0%"></div></div>
-    <div class="divider"></div>
-    <table class="log-table">
-      <thead><tr><th>food</th><th>meal</th><th>cal</th><th>prot</th><th></th></tr></thead>
-      <tbody id="food-tbody">
-        <tr><td colspan="5" style="text-align:center;color:var(--latte);padding:20px;font-size:13px;">nothing logged yet, bestie 🌸</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="card">
-    <div class="card-eyebrow">inspo</div>
-    <div class="card-title">Your 1,400 cal day</div>
-    <div class="tip-box">hits 85g+ protein · whole foods · no crash ✦</div>
-    <div class="sample-row"><span class="sample-name">greek yogurt + berries (breakfast)</span><span class="sample-prot">17g</span><span class="sample-cal">180 cal</span></div>
-    <div class="sample-row"><span class="sample-name">2 eggs + wheat toast (morning)</span><span class="sample-prot">14g</span><span class="sample-cal">280 cal</span></div>
-    <div class="sample-row"><span class="sample-name">grilled chicken + rice + veggies (lunch)</span><span class="sample-prot">35g</span><span class="sample-cal">450 cal</span></div>
-    <div class="sample-row"><span class="sample-name">cottage cheese + fruit (snack)</span><span class="sample-prot">14g</span><span class="sample-cal">160 cal</span></div>
-    <div class="sample-row"><span class="sample-name">dal + roti / light dinner</span><span class="sample-prot">12g</span><span class="sample-cal">330 cal</span></div>
-    <div class="sample-row" style="font-weight:500;border-top:1px solid var(--border);margin-top:4px;padding-top:10px;"><span class="sample-name">total</span><span class="sample-prot">92g ✓</span><span class="sample-cal">1,400 ✓</span></div>
-  </div>
-</div>
 
 <!-- ═══════════ MOVEMENT ═══════════ -->
 <div id="move" class="section">
@@ -918,42 +822,50 @@ input[type=range] { accent-color: var(--rose-deep); width: 100%; }
 
     <div class="ex-item" id="e1">
       <button class="ex-trigger" onclick="exOpen('e1')">
-        <div><div class="ex-name">Bicep Curls</div><div class="ex-reps">3 × 12 reps</div></div>
+        <div><div class="ex-name">Serve the Platters</div><div class="ex-reps">3 × 12–15 reps</div></div>
         <span class="ex-arrow">▾</span>
       </button>
-      <div class="ex-body">Stand feet shoulder-width, dumbbells at sides, palms forward. Curl up toward shoulders keeping elbows pinned. Lower slowly — that's where the work happens. Don't swing your back!<br><button class="ex-done-btn" onclick="exDone(this,'Bicep Curls')">mark as done</button></div>
+      <div class="ex-body">Stand feet shoulder-width, dumbbells with underhand grip, elbows bent 90° so forearms are parallel to floor near waist. Brace core, then push dumbbells forward and slightly upward to shoulder height. Contract front shoulders and biceps at the top, keep shoulders down and back. Slowly reverse to start. No momentum — controlled push only!<br><button class="ex-done-btn" onclick="exDone(this,'Serve the Platters')">mark as done</button></div>
     </div>
 
     <div class="ex-item" id="e2">
       <button class="ex-trigger" onclick="exOpen('e2')">
-        <div><div class="ex-name">Tricep Kickbacks</div><div class="ex-reps">3 × 12 reps each arm</div></div>
+        <div><div class="ex-name">Around the World</div><div class="ex-reps">3 × 10 reps each direction</div></div>
         <span class="ex-arrow">▾</span>
       </button>
-      <div class="ex-body">Hinge forward 45°, one hand on thigh, dumbbell in the other, elbow bent 90°. Extend arm straight back, squeeze at top, lower slowly. Targets the back of your arms — the key to sleek arms!<br><button class="ex-done-btn" onclick="exDone(this,'Tricep Kickbacks')">mark as done</button></div>
+      <div class="ex-body">Stand feet shoulder-width, hold dumbbells at chest level, elbows slightly bent. Slowly rotate both arms in a wide circular path up and around — like drawing big circles in the air. Keep core tight, glutes engaged, torso upright. Go clockwise for a set then counterclockwise. Smooth and controlled the whole way through!<br><button class="ex-done-btn" onclick="exDone(this,'Around the World')">mark as done</button></div>
     </div>
 
     <div class="ex-item" id="e3">
       <button class="ex-trigger" onclick="exOpen('e3')">
-        <div><div class="ex-name">Lateral Raises</div><div class="ex-reps">3 × 10 reps</div></div>
+        <div><div class="ex-name">Front Raises</div><div class="ex-reps">3 × 10 reps</div></div>
         <span class="ex-arrow">▾</span>
       </button>
-      <div class="ex-body">Stand tall, dumbbells at sides, slight elbow bend. Raise arms out to shoulder height like a T. Lower slowly, no jerking. These are harder than they look and so worth it for shoulder definition.<br><button class="ex-done-btn" onclick="exDone(this,'Lateral Raises')">mark as done</button></div>
+      <div class="ex-body">Hold dumbbells at thighs, palms down. Raise both arms straight forward to shoulder height. Lower slowly. Keep a slight bend in the elbows throughout — don't lock out.<br><button class="ex-done-btn" onclick="exDone(this,'Front Raises')">mark as done</button></div>
     </div>
 
     <div class="ex-item" id="e4">
       <button class="ex-trigger" onclick="exOpen('e4')">
+        <div><div class="ex-name">Bicep Curls</div><div class="ex-reps">3 × 12 reps</div></div>
+        <span class="ex-arrow">▾</span>
+      </button>
+      <div class="ex-body">Stand feet shoulder-width, dumbbells at sides, palms forward. Curl up toward shoulders keeping elbows pinned to sides. Lower slowly — that's where the work happens. Don't swing your back!<br><button class="ex-done-btn" onclick="exDone(this,'Bicep Curls')">mark as done</button></div>
+    </div>
+
+    <div class="ex-item" id="e5">
+      <button class="ex-trigger" onclick="exOpen('e5')">
         <div><div class="ex-name">Shoulder Press</div><div class="ex-reps">3 × 10 reps</div></div>
         <span class="ex-arrow">▾</span>
       </button>
       <div class="ex-body">Dumbbells at shoulder height, elbows 90°, palms forward. Press straight overhead until arms nearly straight. Core tight, don't arch lower back. Lower with control.<br><button class="ex-done-btn" onclick="exDone(this,'Shoulder Press')">mark as done</button></div>
     </div>
 
-    <div class="ex-item" id="e5">
-      <button class="ex-trigger" onclick="exOpen('e5')">
-        <div><div class="ex-name">Front Raises</div><div class="ex-reps">3 × 10 reps</div></div>
+    <div class="ex-item" id="e5b">
+      <button class="ex-trigger" onclick="exOpen('e5b')">
+        <div><div class="ex-name">Overhead Tricep Extensions</div><div class="ex-reps">3 × 12 reps</div></div>
         <span class="ex-arrow">▾</span>
       </button>
-      <div class="ex-body">Hold dumbbells at thighs, palms down. Raise both arms forward to shoulder height. Lower slowly. Pair with lateral raises for full shoulder coverage — chef's kiss combo.<br><button class="ex-done-btn" onclick="exDone(this,'Front Raises')">mark as done</button></div>
+      <div class="ex-body">Hold one dumbbell with both hands overhead, arms extended. Keeping upper arms close to your head, bend elbows to lower the weight behind your head. Squeeze triceps to press back up. Don't flare elbows out — keep them pointing forward the whole time!<br><button class="ex-done-btn" onclick="exDone(this,'Overhead Tricep Extensions')">mark as done</button></div>
     </div>
 
     <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mink);font-weight:500;margin:14px 0 8px;">core — no equipment</div>
@@ -990,53 +902,7 @@ input[type=range] { accent-color: var(--rose-deep); width: 100%; }
   </div>
 </div>
 
-<!-- ═══════════ WATER ═══════════ -->
-<div id="hydrate" class="section">
-  <span class="deco-text">hydrated skin is that girl skin ✦</span>
 
-  <div class="card">
-    <div class="card-eyebrow">hydration tracker</div>
-    <div class="card-title">Water Intake</div>
-    <p style="font-size:12px;color:var(--latte);margin-bottom:4px;">tap each drop to log · goal adjusts with the buttons</p>
-    <div class="water-grid" id="wdrops"></div>
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;">
-      <div>
-        <span style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:#7aadc4;" id="wcnt">0</span>
-        <span style="font-size:12px;color:var(--latte);"> / <span id="wgoal-txt">1</span> bottles</span>
-      </div>
-      <div style="display:flex;align-items:center;gap:6px;">
-        <button class="btn-sm" onclick="wGoal(-1)">−</button>
-        <span style="font-size:11px;color:var(--latte);letter-spacing:0.05em;">daily goal</span>
-        <button class="btn-sm" onclick="wGoal(1)">+</button>
-      </div>
-    </div>
-    <div class="prog-wrap" style="margin-top:10px;"><div class="prog-fill sky-fill" id="wprog" style="width:0%"></div></div>
-    <p id="wtip" style="font-size:11px;color:var(--latte);margin-top:8px;font-style:italic;">build the habit — start with 1 bottle 🌊</p>
-  </div>
-
-  <div class="card">
-    <div class="card-eyebrow">morning ritual</div>
-    <div class="card-title">Warm Lemon Water</div>
-    <div class="tip-box">every morning before eating — half a lemon in warm (not boiling) water. first thing. it reduces bloating, aids digestion, and starts your metabolism. it girl approved. ✦</div>
-    <div class="lemon-row">
-      <button class="pill-check" id="lemon-btn" onclick="lemonToggle()">✓</button>
-      <div>
-        <div style="font-size:13px;font-weight:500;color:var(--espresso);">done this morning</div>
-        <div style="font-size:11px;color:var(--latte);">tap to check off ✦</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-eyebrow">why it works</div>
-    <div class="card-title">Water & Fat Loss</div>
-    <div class="habit-row"><span style="font-size:16px;">💧</span><span class="habit-text">reduces bloating and puffiness almost immediately</span></div>
-    <div class="habit-row"><span style="font-size:16px;">🧠</span><span class="habit-text">thirst mimics hunger — water stops false cravings</span></div>
-    <div class="habit-row"><span style="font-size:16px;">✨</span><span class="habit-text">glowy skin that no filter can replicate</span></div>
-    <div class="habit-row"><span style="font-size:16px;">💪</span><span class="habit-text">muscles recover faster after workouts</span></div>
-    <div class="habit-row" style="border:none"><span style="font-size:16px;">🔥</span><span class="habit-text">slight metabolism boost throughout the day</span></div>
-  </div>
-</div>
 
 <!-- ═══════════ PROGRESS ═══════════ -->
 <div id="track" class="section">
@@ -1061,7 +927,7 @@ input[type=range] { accent-color: var(--rose-deep); width: 100%; }
     <table class="log-table">
       <thead><tr><th>date</th><th>weight</th><th>change</th></tr></thead>
       <tbody id="wlog-body">
-        <tr><td colspan="3" style="text-align:center;color:var(--latte);padding:16px;font-size:13px;">starting: ~120 lbs · log your first entry above 🌸</td></tr>
+        <tr><td colspan="3" style="text-align:center;color:var(--latte);padding:16px;font-size:13px;">starting: 130 lbs · log your first entry above 🌸</td></tr>
       </tbody>
     </table>
   </div>
@@ -1097,13 +963,13 @@ input[type=range] { accent-color: var(--rose-deep); width: 100%; }
     <div class="card-eyebrow">weekly schedule · same every week</div>
     <div class="card-title">7-Day Rotation</div>
     <div class="sched-grid">
-      <div class="sched-row"><div class="sched-day">mon</div><div class="sched-content"><span class="badge badge-sky">treadmill</span> <span class="badge badge-rose">arms</span> <span class="badge badge-sage">plank</span><small>5 incline · 2.5 speed · time increases weekly · both YouTube videos</small></div></div>
-      <div class="sched-row"><div class="sched-day">tue</div><div class="sched-content"><span class="badge badge-sky">treadmill</span> <span class="badge badge-rose">arms</span> <span class="badge badge-sage">plank</span><small>5 incline · 2.5 speed · time increases weekly · both YouTube videos</small></div></div>
-      <div class="sched-row"><div class="sched-day">wed</div><div class="sched-content"><span class="badge badge-sky">treadmill</span> <span class="badge badge-sage">plank</span><small>arms rest day · 5 incline · 2.5 speed · both YouTube videos</small></div></div>
-      <div class="sched-row"><div class="sched-day">thu</div><div class="sched-content"><span class="badge badge-sky">treadmill</span> <span class="badge badge-rose">arms</span> <span class="badge badge-sage">plank</span><small>5 incline · 2.5 speed · time increases weekly · both YouTube videos</small></div></div>
-      <div class="sched-row"><div class="sched-day">fri</div><div class="sched-content"><span class="badge badge-sky">treadmill</span> <span class="badge badge-sage">plank</span><small>arms rest day · 5 incline · 2.5 speed · both YouTube videos</small></div></div>
-      <div class="sched-row"><div class="sched-day">sat</div><div class="sched-content"><span class="badge badge-sky">treadmill</span> <span class="badge badge-rose">arms</span> <span class="badge badge-sage">plank</span><small>5 incline · 2.5 speed · time increases weekly · both YouTube videos</small></div></div>
-      <div class="sched-row"><div class="sched-day">sun</div><div class="sched-content"><span class="badge badge-sage">plank</span> <span class="badge badge-sand">rest ✦</span><small>stretch + short walk · no treadmill · no arms · plank still happens!</small></div></div>
+      <div class="sched-row"><div class="sched-day">mon</div><div class="sched-content"><span class="badge badge-sky">treadmill</span> <span class="badge badge-rose">arms</span> <span class="badge badge-sage">plank</span> <span class="badge badge-gold">youtube</span><small>5 incline · 2.5 speed · time increases weekly</small></div></div>
+      <div class="sched-row"><div class="sched-day">tue</div><div class="sched-content"><span class="badge badge-sky">treadmill</span> <span class="badge badge-rose">arms</span> <span class="badge badge-sage">plank</span> <span class="badge badge-gold">youtube</span><small>5 incline · 2.5 speed · time increases weekly</small></div></div>
+      <div class="sched-row"><div class="sched-day">wed</div><div class="sched-content"><span class="badge badge-sky">treadmill</span> <span class="badge badge-sage">plank</span> <span class="badge badge-gold">youtube</span><small>arms rest day · 5 incline · 2.5 speed</small></div></div>
+      <div class="sched-row"><div class="sched-day">thu</div><div class="sched-content"><span class="badge badge-sky">treadmill</span> <span class="badge badge-rose">arms</span> <span class="badge badge-sage">plank</span> <span class="badge badge-gold">youtube</span><small>5 incline · 2.5 speed · time increases weekly</small></div></div>
+      <div class="sched-row"><div class="sched-day">fri</div><div class="sched-content"><span class="badge badge-sky">treadmill</span> <span class="badge badge-sage">plank</span> <span class="badge badge-gold">youtube</span><small>arms rest day · 5 incline · 2.5 speed</small></div></div>
+      <div class="sched-row"><div class="sched-day">sat</div><div class="sched-content"><span class="badge badge-sky">treadmill</span> <span class="badge badge-rose">arms</span> <span class="badge badge-sage">plank</span> <span class="badge badge-gold">youtube</span><small>5 incline · 2.5 speed · time increases weekly</small></div></div>
+      <div class="sched-row"><div class="sched-day">sun</div><div class="sched-content"><span class="badge badge-sage">plank</span> <span class="badge badge-gold">youtube</span> <span class="badge badge-sand">rest ✦</span><small>stretch + short walk · no treadmill · no arms</small></div></div>
     </div>
     <div class="tip-box" style="margin-top:12px;">🎥 <strong>both YouTube videos daily:</strong> Lily Sabri "LOSE FAT in 7 days (belly, waist & abs) | 5 min Home Workout" + "5 Min | 14 Days | Change Your Square Butt to Round Butt — Easy and Effective, No Equipment"</div>
   </div>
@@ -1129,11 +995,10 @@ input[type=range] { accent-color: var(--rose-deep); width: 100%; }
     <div class="card-eyebrow">daily rules</div>
     <div class="card-title">The Non-Negotiables</div>
     <div class="rule-row"><div class="rule-icon">🍋</div><div class="rule-text"><strong>warm lemon water</strong> — first thing every morning on empty stomach</div></div>
-    <div class="rule-row"><div class="rule-icon">💪</div><div class="rule-text"><strong>protein with every meal</strong> — aim for 85g total across the day</div></div>
+    <div class="rule-row"><div class="rule-icon">💧</div><div class="rule-text"><strong>hit water goal</strong> — every single day</div></div>
     <div class="rule-row"><div class="rule-icon">🧘</div><div class="rule-text"><strong>1-min plank every single day</strong> — even rest days, no excuses</div></div>
-    <div class="rule-row"><div class="rule-icon">🚫</div><div class="rule-text"><strong>cut sugar as much as possible</strong> — swap soda for iced tea or diet</div></div>
-    <div class="rule-row"><div class="rule-icon">💧</div><div class="rule-text"><strong>at least 1 bottle of water</strong> — build up to 6–8 cups daily</div></div>
-    <div class="rule-row" style="border:none"><div class="rule-icon">🌙</div><div class="rule-text"><strong>sleep & recover</strong> — rest days are part of the plan, not a failure</div></div>
+    <div class="rule-row"><div class="rule-icon">🏃</div><div class="rule-text"><strong>complete your workout</strong> — treadmill + youtube videos daily</div></div>
+    <div class="rule-row" style="border:none"><div class="rule-icon">📱</div><div class="rule-text"><strong>log in Cal+</strong> — track your day in the app</div></div>
   </div>
 </div>
 
@@ -1321,7 +1186,7 @@ function renderWeights(){
   var tb=document.getElementById('wlog-body'); if(!tb) return;
   if(!S.weights.length){ tb.innerHTML='<tr><td colspan="3" style="text-align:center;color:var(--latte);padding:16px;font-size:13px;">starting: ~120 lbs · log your first entry above 🌸</td></tr>'; return; }
   tb.innerHTML=S.weights.map(function(e,i){
-    var prev=i===0?120:S.weights[i-1].w;
+    var prev=i===0?130:S.weights[i-1].w;
     var diff=(e.w-prev).toFixed(1);
     var cls=diff<0?'wt-neg':diff>0?'wt-pos':'';
     var ds=diff==0?'—':(diff>0?'+':'')+diff+' lbs';
