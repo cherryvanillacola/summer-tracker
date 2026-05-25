@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>her summer era ✦</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rose: #f2c4ce;
+  --rose-deep: #e8a0b0;
+  --rose-pale: #fdf0f3;
+  --rose-blush: #fae8ec;
+  --cream: #fdfaf7;
+  --sand: #f5ede6;
+  --latte: #c9a98a;
+  --espresso: #3d2b1f;
+  --mink: #8c6d63;
+  --sage: #b5c4b1;
+  --sage-pale: #eaf0e8;
+  --sky: #c2d8e8;
+  --sky-pale: #eef4f8;
+  --gold: #d4a84b;
+  --gold-pale: #fdf5e4;
+  --white: #ffffff;
+  --border: rgba(61,43,31,0.09);
+  --shadow: 0 2px 24px rgba(200,140,120,0.10);
+  --shadow-lg: 0 8px 40px rgba(200,140,120,0.16);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--cream);
+  color: var(--espresso);
+  min-height: 100vh;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6;
+  cursor: default;
+}
+
+/* CUSTOM CURSOR */
+body { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='10' cy='10' r='4' fill='%23e8a0b0'/%3E%3C/svg%3E") 10 10, auto; }
+
+/* HEADER */
+.header {
+  background: linear-gradient(160deg, #fce8ee 0%, #fdf5f0 40%, #f8ece8 100%);
+  padding: 3rem 2rem 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(232,160,176,0.3);
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: -80px; left: -80px;
+  width: 260px; height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(242,196,206,0.4) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; right: -40px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(181,196,177,0.3) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.header-deco {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--mink);
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.header-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 8vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--espresso);
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.header-title em {
+  font-style: italic;
+  color: var(--rose-deep);
+}
+
+.header-sub {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--mink);
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.header-date {
+  font-size: 11px;
+  color: var(--latte);
+  margin-top: 6px;
+  letter-spacing: 0.08em;
+}
+
+/* HABITS RIBBON */
+.habits-ribbon {
+  background: var(--rose-deep);
+  padding: 0;
+  display: flex;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.habits-ribbon::-webkit-scrollbar { display: none; }
+
+.habit-chip {
+  flex: 1;
+  min-width: 120px;
+  padding: 11px 16px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  border-right: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.2s;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.habit-chip:last-child { border-right: none; }
+.habit-chip:hover { background: rgba(255,255,255,0.1); }
+.habit-chip.done {
+  background: rgba(0,0,0,0.12);
+  color: rgba(255,255,255,0.5);
+  text-decoration: line-through;
+}
+.hc-icon { font-size: 13px; }
+
+/* NAV */
+.nav-outer {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.92);
+}
+.nav {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.nav::-webkit-scrollbar { display: none; }
+.nav-btn {
+  flex: 1;
+  min-width: 80px;
+  padding: 14px 12px;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mink);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.nav-btn:hover { color: var(--espresso); }
+.nav-btn.active {
+  color: var(--rose-deep);
+  border-bottom-color: var(--rose-deep);
+}
+
+/* MAIN */
+.main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 5rem;
+}
+
+.section { display: none; }
+.section.active { display: block; animation: fadeUp 0.35s ease forwards; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* CARDS */
+.card {
+  background: var(--white);
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  padding: 1.6rem;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s;
+}
+.card:hover { box-shadow: var(--shadow-lg); }
+
+.card-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--latte);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--espresso);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+/* STATS GRID */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.stat-box {
+  background: linear-gradient(135deg, var(--rose-blush) 0%, var(--rose-pale) 100%);
+  border-radius: 16px;
+  padding: 1.2rem;
+  text-align: center;
+  border: 1px solid rgba(232,160,176,0.2);
+  transition: transform 0.2s;
+}
+.stat-box:hover { transform: translateY(-2px); }
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--rose-deep);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-label {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mink);
+  font-weight: 400;
+}
+
+.stat-box.sage {
+  background: linear-gradient(135deg, var(--sage-pale) 0%, #f0f4ef 100%);
+  border-color: rgba(181,196,177,0.3);
+}
+.stat-box.sage .stat-num { color: #7a9e77; }
+
+.stat-box.sky {
+  background: linear-gradient(135deg, var(--sky-pale) 0%, #e8f2f8 100%);
+  border-color: rgba(194,216,232,0.3);
+}
+.stat-box.sky .stat-num { color: #7aadc4; }
+
+.stat-box.gold {
+  background: linear-gradient(135deg, var(--gold-pale) 0%, #fdf0d6 100%);
+  border-color: rgba(212,168,75,0.2);
+}
+.stat-box.gold .stat-num { color: var(--gold); }
+
+/* HABIT CHECKLIST */
+.habit-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+.habit-row:last-child { border-bottom: none; }
+.habit-row:hover { background: var(--rose-pale); border-radius: 8px; padding-left: 8px; }
+
+.pill-check {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid var(--rose);
+  background: transparent;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px;
+  color: transparent;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  font-family: 'Jost', sans-serif;
+}
+.pill-check.done {
+  background: var(--rose-deep);
+  border-color: var(--rose-deep);
+  color: white;
+}
+
+.habit-text {
+  font-size: 13px;
+  color: var(--espresso);
+  font-weight: 300;
+  flex: 1;
+}
+
+/* PROGRESS BARS */
+.prog-wrap {
+  height: 5px;
+  background: var(--rose-blush);
+  border-radius: 99px;
+  overflow: hidden;
+  margin: 8px 0 4px;
+}
+.prog-fill {
+  height: 5px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--rose) 0%, var(--rose-deep) 100%);
+  transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.prog-fill.sage-fill { background: linear-gradient(90deg, var(--sage) 0%, #7a9e77 100%); }
+.prog-fill.sky-fill { background: linear-gradient(90deg, var(--sky) 0%, #7aadc4 100%); }
+
+/* LOG TABLE */
+.log-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.log-table th {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--latte);
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  font-weight: 500;
+  text-align: left;
+}
+.log-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border);
+  color: var(--espresso);
+  font-weight: 300;
+}
+.log-table tr:last-child td { border-bottom: none; }
+
+/* INPUTS */
+input[type=text],
+input[type=number],
+select {
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  background: var(--rose-pale);
+  border: 1.5px solid transparent;
+  border-radius: 12px;
+  padding: 11px 14px;
+  color: var(--espresso);
+  width: 100%;
+  outline: none;
+  transition: all 0.2s;
+  -webkit-appearance: none;
+}
+input:focus, select:focus {
+  border-color: var(--rose-deep);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(232,160,176,0.15);
+}
+input::placeholder { color: var(--latte); }
+
+.input-label {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mink);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* BUTTONS */
+.btn {
+  font-family: 'Jost', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+.btn-rose {
+  background: linear-gradient(135deg, var(--rose-deep) 0%, #d988a0 100%);
+  color: white;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 14px rgba(232,160,176,0.4);
+}
+.btn-rose:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(232,160,176,0.5); }
+.btn-rose:active { transform: translateY(0); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--rose-deep);
+  border: 1.5px solid var(--rose-deep);
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.btn-outline:hover { background: var(--rose-blush); }
+
+.btn-sm {
+  background: var(--rose-blush);
+  color: var(--mink);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-family: 'Jost', sans-serif;
+  cursor: pointer;
+}
+
+.del-btn {
+  background: none;
+  border: none;
+  color: var(--rose);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 2px 6px;
+  transition: color 0.2s;
+  font-family: 'Jost', sans-serif;
+}
+.del-btn:hover { color: #c0504d; }
+
+/* PILL BADGES */
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+.badge-rose { background: var(--rose-blush); color: var(--rose-deep); }
+.badge-sage { background: var(--sage-pale); color: #5a8f5a; }
+.badge-sky  { background: var(--sky-pale);  color: #5a8faa; }
+.badge-gold { background: var(--gold-pale);  color: var(--gold); }
+.badge-sand { background: var(--sand); color: var(--mink); }
+
+/* DIVIDER */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 1.2rem 0;
+}
+
+/* TIP BOX */
+.tip-box {
+  background: var(--rose-pale);
+  border-left: 3px solid var(--rose-deep);
+  border-radius: 0 12px 12px 0;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: var(--mink);
+  line-height: 1.7;
+  font-weight: 300;
+  margin: 12px 0;
+}
+
+/* WATER DROPS */
+.water-grid {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 14px 0;
+}
+.drop {
+  width: 42px; height: 42px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  border: 1.5px solid var(--sky);
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  color: transparent;
+}
+.drop:hover { transform: scale(1.15); border-color: var(--sky); }
+.drop.filled {
+  background: linear-gradient(160deg, var(--sky) 0%, #8fc4de 100%);
+  border-color: #8fc4de;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* EXERCISE ACCORDION */
+.ex-item {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.ex-item:hover { box-shadow: 0 2px 16px rgba(200,140,120,0.10); }
+.ex-item.open { border-color: var(--rose); }
+
+.ex-trigger {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 13px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+  font-family: 'Jost', sans-serif;
+}
+.ex-trigger:hover { background: var(--rose-pale); }
+.ex-item.open .ex-trigger { background: var(--rose-pale); }
+
+.ex-name { font-size: 13px; font-weight: 500; color: var(--espresso); }
+.ex-reps { font-size: 11px; color: var(--latte); margin-top: 1px; letter-spacing: 0.04em; }
+.ex-arrow { color: var(--rose-deep); font-size: 11px; transition: transform 0.25s; }
+.ex-item.open .ex-arrow { transform: rotate(180deg); }
+
+.ex-body {
+  display: none;
+  padding: 0 16px 14px;
+  font-size: 13px;
+  color: var(--mink);
+  line-height: 1.75;
+  font-weight: 300;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+.ex-item.open .ex-body { display: block; }
+
+.ex-done-btn {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 99px;
+  border: 1.5px solid var(--rose);
+  background: transparent;
+  color: var(--rose-deep);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  font-family: 'Jost', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.ex-done-btn:hover { background: var(--rose-blush); }
+.ex-done-btn.marked {
+  background: var(--rose-deep);
+  border-color: var(--rose-deep);
+  color: white;
+}
+
+/* WEEK SCHEDULE */
+.sched-grid { display: grid; gap: 8px; }
+.sched-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 12px 14px;
+  background: var(--rose-pale);
+  border-radius: 12px;
+  border: 1px solid rgba(232,160,176,0.15);
+}
+.sched-day {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--latte);
+  min-width: 28px;
+  padding-top: 3px;
+}
+.sched-content { flex: 1; font-size: 13px; color: var(--espresso); font-weight: 300; }
+.sched-content small { display: block; font-size: 11px; color: var(--mink); margin-top: 2px; }
+
+/* TREADMILL PHASES */
+.phase {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.phase:last-child { border-bottom: none; }
+.phase-tag {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.phase-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--espresso); margin-bottom: 2px; }
+.phase-desc { font-size: 12px; color: var(--mink); font-weight: 300; }
+
+/* STREAK */
+.streak-wrap { display: flex; gap: 8px; }
+.streak-col { display: flex; flex-direction: column; align-items: center; gap: 5px; cursor: pointer; }
+.streak-dot {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: var(--cream);
+  transition: all 0.2s;
+}
+.streak-dot.done { background: var(--rose-deep); border-color: var(--rose-deep); }
+.streak-dot.today { background: var(--gold-pale); border-color: var(--gold); }
+.streak-label { font-size: 10px; color: var(--latte); letter-spacing: 0.05em; }
+
+/* WEIGHT TABLE */
+.wt-pos { color: #c0504d; font-weight: 500; }
+.wt-neg { color: #5a8f5a; font-weight: 500; }
+
+/* LEMON CHECK */
+.lemon-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background: linear-gradient(135deg, #fdf9ec 0%, #fdf5e4 100%);
+  border-radius: 14px;
+  border: 1px solid rgba(212,168,75,0.2);
+  margin-top: 12px;
+}
+
+/* NON-SCALE WINS */
+.win-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border);
+}
+.win-row:last-child { border-bottom: none; }
+
+/* TIMELINE */
+.timeline { display: grid; gap: 8px; }
+.tl-row {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px;
+  border-radius: 14px;
+  background: var(--sand);
+  border: 1px solid rgba(201,169,138,0.2);
+}
+.tl-time {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--latte);
+  min-width: 48px;
+  padding-top: 2px;
+}
+.tl-content { flex: 1; font-size: 13px; color: var(--espresso); font-weight: 300; }
+.tl-content small { display: block; font-size: 11px; color: var(--mink); margin-top: 2px; font-style: italic; }
+
+/* DAILY RULES */
+.rule-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--border);
+}
+.rule-row:last-child { border-bottom: none; }
+.rule-icon { font-size: 20px; flex-shrink: 0; }
+.rule-text { font-size: 13px; color: var(--espresso); font-weight: 300; }
+.rule-text strong { font-weight: 500; }
+
+/* RESPONSIVE */
+@media (max-width: 500px) {
+  .habits-ribbon { display: none; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .header-title { font-size: 2.4rem; }
+  .main { padding: 1.5rem 1rem 4rem; }
+  .nav-btn { font-size: 10px; padding: 12px 8px; }
+}
+
+/* GRAIN OVERLAY */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+/* FLOATING DECO */
+.deco-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 11px;
+  color: var(--rose);
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin: -8px 0 16px;
+  display: block;
+}
+
+input[type=range] { accent-color: var(--rose-deep); width: 100%; }
+
+.sample-row { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+.sample-row:last-child { border-bottom: none; }
+.sample-name { color: var(--espresso); font-weight: 300; }
+.sample-cal { color: var(--mink); min-width: 50px; text-align: right; }
+.sample-prot { color: #7a9e77; min-width: 45px; text-align: right; font-size: 12px; }
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-deco">✦ summer wellness tracker ✦</div>
+  <h1 class="header-title">her <em>glow up</em><br>era</h1>
+  <div class="header-sub">pilates · protein · lemon water · consistency</div>
+  <div class="header-date" id="hdate"></div>
+</header>
+
+<!-- DAILY HABITS RIBBON -->
+<div class="habits-ribbon">
+  <div class="habit-chip" onclick="toggleHabitChip(this,0)" id="hc0"><span class="hc-icon">🍋</span>warm lemon water</div>
+  <div class="habit-chip" onclick="toggleHabitChip(this,1)" id="hc1"><span class="hc-icon">💪</span>protein every meal</div>
+  <div class="habit-chip" onclick="toggleHabitChip(this,2)" id="hc2"><span class="hc-icon">🧘</span>1-min plank</div>
+  <div class="habit-chip" onclick="toggleHabitChip(this,3)" id="hc3"><span class="hc-icon">🚫</span>no sugar today</div>
+</div>
+
+<!-- NAV -->
+<nav class="nav-outer">
+  <div class="nav">
+    <button class="nav-btn active" onclick="goTab('today',this)">Today</button>
+    <button class="nav-btn" onclick="goTab('cals',this)">Calories</button>
+    <button class="nav-btn" onclick="goTab('move',this)">Movement</button>
+    <button class="nav-btn" onclick="goTab('hydrate',this)">Water</button>
+    <button class="nav-btn" onclick="goTab('track',this)">Progress</button>
+    <button class="nav-btn" onclick="goTab('myplan',this)">The Plan</button>
+  </div>
+</nav>
+
+<main class="main">
+
+<!-- ═══════════ TODAY ═══════════ -->
+<div id="today" class="section active">
+  <span class="deco-text">you're doing amazing, bestie ✦</span>
+
+  <div class="stats-grid">
+    <div class="stat-box"><div class="stat-num" id="s-cal">0</div><div class="stat-label">calories logged</div></div>
+    <div class="stat-box sky"><div class="stat-num" id="s-water">0</div><div class="stat-label">bottles of water</div></div>
+    <div class="stat-box sage"><div class="stat-num" id="s-ex">0</div><div class="stat-label">exercises done</div></div>
+    <div class="stat-box gold"><div class="stat-num" id="s-habits">0</div><div class="stat-label">habits checked</div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-eyebrow">daily checklist</div>
+    <div class="card-title">Today's non-negotiables</div>
+    <div class="habit-row"><button class="pill-check" onclick="chk(this,'d1')">✓</button><span class="habit-text">🍋 drank warm lemon water on empty stomach</span></div>
+    <div class="habit-row"><button class="pill-check" onclick="chk(this,'d2')">✓</button><span class="habit-text">💧 hit my water goal for today</span></div>
+    <div class="habit-row"><button class="pill-check" onclick="chk(this,'d3')">✓</button><span class="habit-text">💪 got 85g+ protein today</span></div>
+    <div class="habit-row"><button class="pill-check" onclick="chk(this,'d4')">✓</button><span class="habit-text">🧘 did my 1-minute plank</span></div>
+    <div class="habit-row"><button class="pill-check" onclick="chk(this,'d5')">✓</button><span class="habit-text">🚫 avoided sugary drinks & snacks</span></div>
+    <div class="habit-row"><button class="pill-check" onclick="chk(this,'d6')">✓</button><span class="habit-text">🏃 completed my workout</span></div>
+    <div class="habit-row"><button class="pill-check" onclick="chk(this,'d7')">✓</button><span class="habit-text">😴 in bed by midnight</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-eyebrow">today's snapshot</div>
+    <div class="card-title">Calories & Protein</div>
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
+      <span style="font-size:12px;color:var(--latte);letter-spacing:0.05em;">calories eaten vs 1,400 goal</span>
+      <span style="font-size:16px;font-family:'Cormorant Garamond',serif;" id="snap-cal-txt">0 / 1,400</span>
+    </div>
+    <div class="prog-wrap"><div class="prog-fill" id="snap-cal-bar" style="width:0%"></div></div>
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;margin-bottom:4px;">
+      <span style="font-size:12px;color:var(--latte);letter-spacing:0.05em;">protein vs 85g goal</span>
+      <span style="font-size:16px;font-family:'Cormorant Garamond',serif;" id="snap-prot-txt">0 / 85g</span>
+    </div>
+    <div class="prog-wrap"><div class="prog-fill sky-fill" id="snap-prot-bar" style="width:0%"></div></div>
+    <p style="font-size:11px;color:var(--latte);margin-top:10px;">log meals in the calories tab to update ✦</p>
+  </div>
+
+  <div class="card">
+    <div class="card-eyebrow">quick log</div>
+    <div class="card-title">Fast Actions</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <button class="btn btn-outline" onclick="qWater()">+ water bottle</button>
+      <button class="btn btn-outline" onclick="goTab('cals', document.querySelectorAll('.nav-btn')[1])">+ log meal</button>
+      <button class="btn btn-outline" onclick="goTab('move', document.querySelectorAll('.nav-btn')[2])">log workout</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ CALORIES ═══════════ -->
+<div id="cals" class="section">
+  <span class="deco-text">fuel your body like the main character you are ✦</span>
+
+  <div class="card">
+    <div class="card-eyebrow">food diary</div>
+    <div class="card-title">Log a Meal</div>
+    <div style="display:grid;gap:10px;margin-bottom:12px;">
+      <div>
+        <label class="input-label">food name</label>
+        <input type="text" id="fn" placeholder="e.g. greek yogurt + honey">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+        <div>
+          <label class="input-label">calories</label>
+          <input type="number" id="fc" placeholder="180" min="0">
+        </div>
+        <div>
+          <label class="input-label">protein (g)</label>
+          <input type="number" id="fp" placeholder="17" min="0">
+        </div>
+        <div>
+          <label class="input-label">meal</label>
+          <select id="fm"><option>Breakfast</option><option>Lunch</option><option>Dinner</option><option>Snack</option></select>
+        </div>
+      </div>
+      <button class="btn btn-rose" onclick="addFood()" style="width:100%;">add to diary</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-eyebrow">today's totals</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+      <div>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--rose-deep);" id="cal-tot">0</span>
+        <span style="font-size:12px;color:var(--latte);"> / 1,400 cal</span>
+      </div>
+      <div style="text-align:right;">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#7aadc4;" id="prot-tot">0</span>
+        <span style="font-size:12px;color:var(--latte);">g / 85g protein</span>
+      </div>
+    </div>
+    <div class="prog-wrap"><div class="prog-fill" id="cbar" style="width:0%"></div></div>
+    <div class="prog-wrap"><div class="prog-fill sky-fill" id="pbar" style="width:0%"></div></div>
+    <div class="divider"></div>
+    <table class="log-table">
+      <thead><tr><th>food</th><th>meal</th><th>cal</th><th>prot</th><th></th></tr></thead>
+      <tbody id="food-tbody">
+        <tr><td colspan="5" style="text-align:center;color:var(--latte);padding:20px;font-size:13px;">nothing logged yet, bestie 🌸</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-eyebrow">inspo</div>
+    <div class="card-title">Your 1,400 cal day</div>
+    <div class="tip-box">hits 85g+ protein · whole foods · no crash ✦</div>
+    <div class="sample-row"><span class="sample-name">greek yogurt + berries (breakfast)</span><span class="sample-prot">17g</span><span class="sample-cal">180 cal</span></div>
+    <div class="sample-row"><span class="sample-name">2 eggs + wheat toast (morning)</span><span class="sample-prot">14g</span><span class="sample-cal">280 cal</span></div>
+    <div class="sample-row"><span class="sample-name">grilled chicken + rice + veggies (lunch)</span><span class="sample-prot">35g</span><span class="sample-cal">450 cal</span></div>
+    <div class="sample-row"><span class="sample-name">cottage cheese + fruit (snack)</span><span class="sample-prot">14g</span><span class="sample-cal">160 cal</span></div>
+    <div class="sample-row"><span class="sample-name">dal + roti / light dinner</span><span class="sample-prot">12g</span><span class="sample-cal">330 cal</span></div>
+    <div class="sample-row" style="font-weight:500;border-top:1px solid var(--border);margin-top:4px;padding-top:10px;"><span class="sample-name">total</span><span class="sample-prot">92g ✓</span><span class="sample-cal">1,400 ✓</span></div>
+  </div>
+</div>
+
+<!-- ═══════════ MOVEMENT ═══════════ -->
+<div id="move" class="section">
+  <span class="deco-text">that girl walks at 2.5 speed & doesn't apologize ✦</span>
+
+  <div class="card">
+    <div class="card-eyebrow">treadmill log</div>
+    <div class="card-title">Log a Session</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px;">
+      <div><label class="input-label">duration (min)</label><input type="number" id="tdur" placeholder="20" min="0"></div>
+      <div><label class="input-label">speed</label><input type="number" id="tspd" placeholder="2.5" min="0" max="10" step="0.5"></div>
+      <div><label class="input-label">incline</label><input type="number" id="tinc" placeholder="5" min="0" max="10" step="0.5"></div>
+    </div>
+    <button class="btn btn-rose" onclick="addTread()" style="width:100%;">save session</button>
+    <div id="tread-result" style="margin-top:12px;"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-eyebrow">arm & core circuit</div>
+    <div class="card-title">Today's Exercises</div>
+    <p style="font-size:12px;color:var(--latte);margin-bottom:14px;letter-spacing:0.04em;">tap to expand · rest arms every other day</p>
+
+    <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mink);font-weight:500;margin-bottom:8px;">arms — 5 lb dumbbells</div>
+
+    <div class="ex-item" id="e1">
+      <button class="ex-trigger" onclick="exOpen('e1')">
+        <div><div class="ex-name">Bicep Curls</div><div class="ex-reps">3 × 12 reps</div></div>
+        <span class="ex-arrow">▾</span>
+      </button>
+      <div class="ex-body">Stand feet shoulder-width, dumbbells at sides, palms forward. Curl up toward shoulders keeping elbows pinned. Lower slowly — that's where the work happens. Don't swing your back!<br><button class="ex-done-btn" onclick="exDone(this,'Bicep Curls')">mark as done</button></div>
+    </div>
+
+    <div class="ex-item" id="e2">
+      <button class="ex-trigger" onclick="exOpen('e2')">
+        <div><div class="ex-name">Tricep Kickbacks</div><div class="ex-reps">3 × 12 reps each arm</div></div>
+        <span class="ex-arrow">▾</span>
+      </button>
+      <div class="ex-body">Hinge forward 45°, one hand on thigh, dumbbell in the other, elbow bent 90°. Extend arm straight back, squeeze at top, lower slowly. Targets the back of your arms — the key to sleek arms!<br><button class="ex-done-btn" onclick="exDone(this,'Tricep Kickbacks')">mark as done</button></div>
+    </div>
+
+    <div class="ex-item" id="e3">
+      <button class="ex-trigger" onclick="exOpen('e3')">
+        <div><div class="ex-name">Lateral Raises</div><div class="ex-reps">3 × 10 reps</div></div>
+        <span class="ex-arrow">▾</span>
+      </button>
+      <div class="ex-body">Stand tall, dumbbells at sides, slight elbow bend. Raise arms out to shoulder height like a T. Lower slowly, no jerking. These are harder than they look and so worth it for shoulder definition.<br><button class="ex-done-btn" onclick="exDone(this,'Lateral Raises')">mark as done</button></div>
+    </div>
+
+    <div class="ex-item" id="e4">
+      <button class="ex-trigger" onclick="exOpen('e4')">
+        <div><div class="ex-name">Shoulder Press</div><div class="ex-reps">3 × 10 reps</div></div>
+        <span class="ex-arrow">▾</span>
+      </button>
+      <div class="ex-body">Dumbbells at shoulder height, elbows 90°, palms forward. Press straight overhead until arms nearly straight. Core tight, don't arch lower back. Lower with control.<br><button class="ex-done-btn" onclick="exDone(this,'Shoulder Press')">mark as done</button></div>
+    </div>
+
+    <div class="ex-item" id="e5">
+      <button class="ex-trigger" onclick="exOpen('e5')">
+        <div><div class="ex-name">Front Raises</div><div class="ex-reps">3 × 10 reps</div></div>
+        <span class="ex-arrow">▾</span>
+      </button>
+      <div class="ex-body">Hold dumbbells at thighs, palms down. Raise both arms forward to shoulder height. Lower slowly. Pair with lateral raises for full shoulder coverage — chef's kiss combo.<br><button class="ex-done-btn" onclick="exDone(this,'Front Raises')">mark as done</button></div>
+    </div>
+
+    <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mink);font-weight:500;margin:14px 0 8px;">core — no equipment</div>
+
+    <div class="ex-item" id="e6">
+      <button class="ex-trigger" onclick="exOpen('e6')">
+        <div><div class="ex-name">Plank</div><div class="ex-reps">hold for 1 minute — daily!</div></div>
+        <span class="ex-arrow">▾</span>
+      </button>
+      <div class="ex-body">Forearms and toes, body straight head to heels. Hips don't sag or pike. Breathe. Start at 20-30 sec if needed and build up. This is the one daily non-negotiable — do it every single day!<br><button class="ex-done-btn" onclick="exDone(this,'Plank')">mark as done</button></div>
+    </div>
+
+    <div class="ex-item" id="e7">
+      <button class="ex-trigger" onclick="exOpen('e7')">
+        <div><div class="ex-name">Crunches</div><div class="ex-reps">3 × 15 reps</div></div>
+        <span class="ex-arrow">▾</span>
+      </button>
+      <div class="ex-body">On back, knees bent, fingertips behind ears (not pulling neck). Curl shoulders up, exhale at top, lower slowly. Abs only — no momentum.<br><button class="ex-done-btn" onclick="exDone(this,'Crunches')">mark as done</button></div>
+    </div>
+
+    <div class="ex-item" id="e8">
+      <button class="ex-trigger" onclick="exOpen('e8')">
+        <div><div class="ex-name">Leg Raises</div><div class="ex-reps">3 × 10 reps</div></div>
+        <span class="ex-arrow">▾</span>
+      </button>
+      <div class="ex-body">Flat on back, legs straight, hands under hips. Raise legs to 90°, lower slowly and stop just before touching the floor. That hovering tension is the whole point — great for lower abs!<br><button class="ex-done-btn" onclick="exDone(this,'Leg Raises')">mark as done</button></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-eyebrow">exercise log</div>
+    <div class="card-title">Done Today</div>
+    <div id="ex-log"><p style="font-size:13px;color:var(--latte);text-align:center;padding:16px 0;">nothing yet — go slay your workout! 💗</p></div>
+  </div>
+</div>
+
+<!-- ═══════════ WATER ═══════════ -->
+<div id="hydrate" class="section">
+  <span class="deco-text">hydrated skin is that girl skin ✦</span>
+
+  <div class="card">
+    <div class="card-eyebrow">hydration tracker</div>
+    <div class="card-title">Water Intake</div>
+    <p style="font-size:12px;color:var(--latte);margin-bottom:4px;">tap each drop to log · goal adjusts with the buttons</p>
+    <div class="water-grid" id="wdrops"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;">
+      <div>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:#7aadc4;" id="wcnt">0</span>
+        <span style="font-size:12px;color:var(--latte);"> / <span id="wgoal-txt">1</span> bottles</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <button class="btn-sm" onclick="wGoal(-1)">−</button>
+        <span style="font-size:11px;color:var(--latte);letter-spacing:0.05em;">daily goal</span>
+        <button class="btn-sm" onclick="wGoal(1)">+</button>
+      </div>
+    </div>
+    <div class="prog-wrap" style="margin-top:10px;"><div class="prog-fill sky-fill" id="wprog" style="width:0%"></div></div>
+    <p id="wtip" style="font-size:11px;color:var(--latte);margin-top:8px;font-style:italic;">build the habit — start with 1 bottle 🌊</p>
+  </div>
+
+  <div class="card">
+    <div class="card-eyebrow">morning ritual</div>
+    <div class="card-title">Warm Lemon Water</div>
+    <div class="tip-box">every morning before eating — half a lemon in warm (not boiling) water. first thing. it reduces bloating, aids digestion, and starts your metabolism. it girl approved. ✦</div>
+    <div class="lemon-row">
+      <button class="pill-check" id="lemon-btn" onclick="lemonToggle()">✓</button>
+      <div>
+        <div style="font-size:13px;font-weight:500;color:var(--espresso);">done this morning</div>
+        <div style="font-size:11px;color:var(--latte);">tap to check off ✦</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-eyebrow">why it works</div>
+    <div class="card-title">Water & Fat Loss</div>
+    <div class="habit-row"><span style="font-size:16px;">💧</span><span class="habit-text">reduces bloating and puffiness almost immediately</span></div>
+    <div class="habit-row"><span style="font-size:16px;">🧠</span><span class="habit-text">thirst mimics hunger — water stops false cravings</span></div>
+    <div class="habit-row"><span style="font-size:16px;">✨</span><span class="habit-text">glowy skin that no filter can replicate</span></div>
+    <div class="habit-row"><span style="font-size:16px;">💪</span><span class="habit-text">muscles recover faster after workouts</span></div>
+    <div class="habit-row" style="border:none"><span style="font-size:16px;">🔥</span><span class="habit-text">slight metabolism boost throughout the day</span></div>
+  </div>
+</div>
+
+<!-- ═══════════ PROGRESS ═══════════ -->
+<div id="track" class="section">
+  <span class="deco-text">progress over perfection, always ✦</span>
+
+  <div class="card">
+    <div class="card-eyebrow">weekly streak</div>
+    <div class="card-title">Workout Streak</div>
+    <p style="font-size:12px;color:var(--latte);margin-bottom:12px;">tap a day to mark done · yellow = today</p>
+    <div class="streak-wrap" id="streak-wrap"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-eyebrow">weight journal</div>
+    <div class="card-title">Weight Log</div>
+    <div class="tip-box">weigh in once a week, same time (morning before eating). daily fluctuations are normal and don't mean anything — trust the trend, not the number. ✦</div>
+    <div style="display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:12px;">
+      <input type="number" id="winput" placeholder="enter weight in lbs" min="80" max="250" step="0.5">
+      <button class="btn btn-rose" onclick="addWeight()" style="padding:10px 20px;">log</button>
+    </div>
+    <div class="divider"></div>
+    <table class="log-table">
+      <thead><tr><th>date</th><th>weight</th><th>change</th></tr></thead>
+      <tbody id="wlog-body">
+        <tr><td colspan="3" style="text-align:center;color:var(--latte);padding:16px;font-size:13px;">starting: ~120 lbs · log your first entry above 🌸</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-eyebrow">beyond the scale</div>
+    <div class="card-title">Non-Scale Wins</div>
+    <div class="win-row"><button class="pill-check" onclick="chk(this,'w1')">✓</button><span class="habit-text">clothes fitting differently around the waist</span></div>
+    <div class="win-row"><button class="pill-check" onclick="chk(this,'w2')">✓</button><span class="habit-text">more energy during workouts</span></div>
+    <div class="win-row"><button class="pill-check" onclick="chk(this,'w3')">✓</button><span class="habit-text">treadmill feeling easier at same settings</span></div>
+    <div class="win-row"><button class="pill-check" onclick="chk(this,'w4')">✓</button><span class="habit-text">face & stomach looking less puffy</span></div>
+    <div class="win-row"><button class="pill-check" onclick="chk(this,'w5')">✓</button><span class="habit-text">sleeping better & deeper</span></div>
+    <div class="win-row" style="border:none"><button class="pill-check" onclick="chk(this,'w6')">✓</button><span class="habit-text">drinking water without thinking about it</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-eyebrow">realistic timeline</div>
+    <div class="card-title">What to Expect</div>
+    <div class="timeline">
+      <div class="tl-row"><div class="tl-time">wk 1–2</div><div class="tl-content">bloating reduces, water habit forming, treadmill getting easier<small>most visible: face & stomach puffiness down fast</small></div></div>
+      <div class="tl-row"><div class="tl-time">wk 3–4</div><div class="tl-content">visible change in face + waist, arms more toned<small>clothes start fitting differently 💗</small></div></div>
+      <div class="tl-row"><div class="tl-time">month 2</div><div class="tl-content">real fat loss showing, hitting 30 min treadmill consistently<small>energy levels noticeably better</small></div></div>
+      <div class="tl-row"><div class="tl-time">summer</div><div class="tl-content">8–12 lbs of healthy fat loss possible if consistent<small>BTS concert ready 💜</small></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ THE PLAN ═══════════ -->
+<div id="myplan" class="section">
+  <span class="deco-text">the blueprint ✦</span>
+
+  <div class="card">
+    <div class="card-eyebrow">weekly schedule · same every week</div>
+    <div class="card-title">7-Day Rotation</div>
+    <div class="sched-grid">
+      <div class="sched-row"><div class="sched-day">mon</div><div class="sched-content"><span class="badge badge-sky">treadmill</span> <span class="badge badge-rose">arms</span> <span class="badge badge-sage">plank</span><small>5 incline · 2.5 speed · time increases weekly · both YouTube videos</small></div></div>
+      <div class="sched-row"><div class="sched-day">tue</div><div class="sched-content"><span class="badge badge-sky">treadmill</span> <span class="badge badge-rose">arms</span> <span class="badge badge-sage">plank</span><small>5 incline · 2.5 speed · time increases weekly · both YouTube videos</small></div></div>
+      <div class="sched-row"><div class="sched-day">wed</div><div class="sched-content"><span class="badge badge-sky">treadmill</span> <span class="badge badge-sage">plank</span><small>arms rest day · 5 incline · 2.5 speed · both YouTube videos</small></div></div>
+      <div class="sched-row"><div class="sched-day">thu</div><div class="sched-content"><span class="badge badge-sky">treadmill</span> <span class="badge badge-rose">arms</span> <span class="badge badge-sage">plank</span><small>5 incline · 2.5 speed · time increases weekly · both YouTube videos</small></div></div>
+      <div class="sched-row"><div class="sched-day">fri</div><div class="sched-content"><span class="badge badge-sky">treadmill</span> <span class="badge badge-sage">plank</span><small>arms rest day · 5 incline · 2.5 speed · both YouTube videos</small></div></div>
+      <div class="sched-row"><div class="sched-day">sat</div><div class="sched-content"><span class="badge badge-sky">treadmill</span> <span class="badge badge-rose">arms</span> <span class="badge badge-sage">plank</span><small>5 incline · 2.5 speed · time increases weekly · both YouTube videos</small></div></div>
+      <div class="sched-row"><div class="sched-day">sun</div><div class="sched-content"><span class="badge badge-sage">plank</span> <span class="badge badge-sand">rest ✦</span><small>stretch + short walk · no treadmill · no arms · plank still happens!</small></div></div>
+    </div>
+    <div class="tip-box" style="margin-top:12px;">🎥 <strong>both YouTube videos daily:</strong> Lily Sabri "LOSE FAT in 7 days (belly, waist & abs) | 5 min Home Workout" + "5 Min | 14 Days | Change Your Square Butt to Round Butt — Easy and Effective, No Equipment"</div>
+  </div>
+
+  <div class="card">
+    <div class="card-eyebrow">treadmill progression · may 26 → aug 16</div>
+    <div class="card-title">12-Week Build ✦</div>
+    <div class="phase"><div class="phase-tag">week 1 · may 26 – jun 1</div><div class="phase-name">Starting strong</div><div class="phase-desc">15 min · 2.5 speed · 5 incline</div></div>
+    <div class="phase"><div class="phase-tag">week 2 · jun 2 – jun 8</div><div class="phase-name">Building momentum</div><div class="phase-desc">17 min · 2.5 speed · 5 incline</div></div>
+    <div class="phase"><div class="phase-tag">week 3 · jun 9 – jun 15</div><div class="phase-name">Finding your rhythm</div><div class="phase-desc">19 min · 2.5 speed · 5 incline</div></div>
+    <div class="phase"><div class="phase-tag">week 4 · jun 16 – jun 22</div><div class="phase-name">Getting consistent</div><div class="phase-desc">21 min · 2.5 speed · 5 incline</div></div>
+    <div class="phase"><div class="phase-tag">week 5 · jun 23 – jun 29</div><div class="phase-name">Halfway there</div><div class="phase-desc">23 min · 2.5 speed · 5 incline</div></div>
+    <div class="phase"><div class="phase-tag">week 6 · jun 30 – jul 6</div><div class="phase-name">In your element</div><div class="phase-desc">25 min · 2.5 speed · 5 incline</div></div>
+    <div class="phase"><div class="phase-tag">week 7 · jul 7 – jul 13</div><div class="phase-name">That girl era</div><div class="phase-desc">27 min · 2.5 speed · 5 incline</div></div>
+    <div class="phase"><div class="phase-tag">week 8 · jul 14 – jul 20</div><div class="phase-name">Locked in</div><div class="phase-desc">29 min · 2.5 speed · 5 incline</div></div>
+    <div class="phase"><div class="phase-tag">week 9 · jul 21 – jul 27</div><div class="phase-name">Unstoppable</div><div class="phase-desc">31 min · 2.5 speed · 5 incline</div></div>
+    <div class="phase"><div class="phase-tag">week 10 · jul 28 – aug 3</div><div class="phase-name">Almost there</div><div class="phase-desc">33 min · 2.5 speed · 5 incline</div></div>
+    <div class="phase"><div class="phase-tag">week 11 · aug 4 – aug 10</div><div class="phase-name">Final stretch</div><div class="phase-desc">35 min · 2.5 speed · 5 incline</div></div>
+    <div class="phase"><div class="phase-tag">week 12 · aug 11 – aug 17 🎤</div><div class="phase-name">Concert week — you did it</div><div class="phase-desc">37 min · 2.5 speed · 5 incline · BTS Aug 16 💜</div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-eyebrow">daily rules</div>
+    <div class="card-title">The Non-Negotiables</div>
+    <div class="rule-row"><div class="rule-icon">🍋</div><div class="rule-text"><strong>warm lemon water</strong> — first thing every morning on empty stomach</div></div>
+    <div class="rule-row"><div class="rule-icon">💪</div><div class="rule-text"><strong>protein with every meal</strong> — aim for 85g total across the day</div></div>
+    <div class="rule-row"><div class="rule-icon">🧘</div><div class="rule-text"><strong>1-min plank every single day</strong> — even rest days, no excuses</div></div>
+    <div class="rule-row"><div class="rule-icon">🚫</div><div class="rule-text"><strong>cut sugar as much as possible</strong> — swap soda for iced tea or diet</div></div>
+    <div class="rule-row"><div class="rule-icon">💧</div><div class="rule-text"><strong>at least 1 bottle of water</strong> — build up to 6–8 cups daily</div></div>
+    <div class="rule-row" style="border:none"><div class="rule-icon">🌙</div><div class="rule-text"><strong>sleep & recover</strong> — rest days are part of the plan, not a failure</div></div>
+  </div>
+</div>
+
+</main>
+
+<script>
+// ── STATE ──
+var S = {
+  habits: {}, chips: [false,false,false,false],
+  foods: [], treads: [], exs: [],
+  wc: 0, wg: 1, weights: [],
+  streak: [false,false,false,false,false,false,false],
+  lemon: false
+};
+
+function save(){ try{ localStorage.setItem('sg25', JSON.stringify(S)); }catch(e){} }
+function load(){ try{ var d=localStorage.getItem('sg25'); if(d) S=Object.assign(S,JSON.parse(d)); }catch(e){} }
+
+// ── NAV ──
+function goTab(id, btn){
+  document.querySelectorAll('.section').forEach(function(s){ s.classList.remove('active'); });
+  document.querySelectorAll('.nav-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  updateAll();
+}
+
+// ── DATE ──
+function setDate(){
+  var d = new Date();
+  document.getElementById('hdate').textContent = d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'}).toLowerCase();
+}
+
+// ── HABIT CHIPS (ribbon) ──
+function toggleHabitChip(el, i){
+  S.chips[i] = !S.chips[i];
+  el.classList.toggle('done', S.chips[i]);
+  save(); updateStats();
+}
+function restoreChips(){
+  S.chips.forEach(function(v,i){
+    var el = document.getElementById('hc'+i);
+    if(el) el.classList.toggle('done', v);
+  });
+}
+
+// ── CHECKLIST HABITS ──
+function chk(btn, key){
+  S.habits[key] = !S.habits[key];
+  btn.classList.toggle('done', S.habits[key]);
+  save(); updateStats();
+}
+function restoreHabits(){
+  Object.keys(S.habits).forEach(function(k){
+    document.querySelectorAll('[onclick*="\''+k+'\'"]').forEach(function(el){
+      if(el.classList.contains('pill-check')) el.classList.toggle('done', !!S.habits[k]);
+    });
+  });
+}
+
+// ── FOOD ──
+function addFood(){
+  var n=document.getElementById('fn').value.trim();
+  var c=parseFloat(document.getElementById('fc').value)||0;
+  var p=parseFloat(document.getElementById('fp').value)||0;
+  var m=document.getElementById('fm').value;
+  if(!n||!c){ alert('please enter a name and calories 🌸'); return; }
+  S.foods.push({n:n,c:c,p:p,m:m,id:Date.now()});
+  document.getElementById('fn').value='';
+  document.getElementById('fc').value='';
+  document.getElementById('fp').value='';
+  save(); renderFoods(); updateStats();
+}
+function delFood(id){ S.foods=S.foods.filter(function(f){ return f.id!==id; }); save(); renderFoods(); updateStats(); }
+function renderFoods(){
+  var tb=document.getElementById('food-tbody');
+  if(!S.foods.length){
+    tb.innerHTML='<tr><td colspan="5" style="text-align:center;color:var(--latte);padding:20px;font-size:13px;">nothing logged yet, bestie 🌸</td></tr>';
+    document.getElementById('cal-tot').textContent='0';
+    document.getElementById('prot-tot').textContent='0';
+    document.getElementById('cbar').style.width='0%';
+    document.getElementById('pbar').style.width='0%';
+    return;
+  }
+  var tc=0,tp=0;
+  tb.innerHTML=S.foods.map(function(f){
+    tc+=f.c; tp+=f.p;
+    return '<tr><td>'+f.n+'</td><td><span class="badge badge-rose">'+f.m+'</span></td><td>'+f.c+'</td><td>'+f.p+'g</td><td><button class="del-btn" onclick="delFood('+f.id+')">✕</button></td></tr>';
+  }).join('');
+  document.getElementById('cal-tot').textContent=Math.round(tc);
+  document.getElementById('prot-tot').textContent=Math.round(tp);
+  var cp=Math.min(100,(tc/1400)*100);
+  var pp=Math.min(100,(tp/85)*100);
+  var cb=document.getElementById('cbar');
+  cb.style.width=cp+'%';
+  cb.style.background=cp>105?'#e07070':cp>85?'var(--gold)':'linear-gradient(90deg,var(--rose),var(--rose-deep))';
+  document.getElementById('pbar').style.width=pp+'%';
+}
+
+// ── TREADMILL ──
+function addTread(){
+  var dur=parseFloat(document.getElementById('tdur').value)||0;
+  var spd=parseFloat(document.getElementById('tspd').value)||0;
+  var inc=parseFloat(document.getElementById('tinc').value)||0;
+  if(!dur){ alert('enter at least the duration 🌸'); return; }
+  var cal=Math.round(dur*4.2);
+  S.treads.push({dur:dur,spd:spd,inc:inc,cal:cal});
+  document.getElementById('tdur').value='';
+  document.getElementById('tspd').value='';
+  document.getElementById('tinc').value='';
+  save();
+  document.getElementById('tread-result').innerHTML='<div style="background:var(--rose-pale);border-radius:12px;padding:12px;font-size:13px;color:var(--mink);margin-top:4px;">✦ logged: <strong style="color:var(--espresso);">'+dur+' min</strong> · speed '+spd+' · incline '+inc+' · ~'+cal+' cal burned</div>';
+  updateStats();
+}
+
+// ── EXERCISES ──
+function exOpen(id){ document.getElementById(id).classList.toggle('open'); }
+function exDone(btn, name){
+  btn.classList.toggle('marked');
+  if(btn.classList.contains('marked')){
+    btn.textContent='done! ✓';
+    var today=new Date().toDateString();
+    if(!S.exs.find(function(e){ return e.n===name&&e.d===today; })) S.exs.push({n:name,d:today});
+  } else {
+    btn.textContent='mark as done';
+    var today=new Date().toDateString();
+    S.exs=S.exs.filter(function(e){ return !(e.n===name&&e.d===today); });
+  }
+  save(); renderExLog(); updateStats();
+}
+function renderExLog(){
+  var el=document.getElementById('ex-log');
+  if(!el) return;
+  var today=new Date().toDateString();
+  var td=S.exs.filter(function(e){ return e.d===today; });
+  if(!td.length){ el.innerHTML='<p style="font-size:13px;color:var(--latte);text-align:center;padding:16px;">nothing yet — go slay your workout! 💗</p>'; return; }
+  el.innerHTML=td.map(function(e){
+    return '<div class="habit-row"><span style="color:var(--rose-deep);font-size:16px;">✦</span><span class="habit-text">'+e.n+'</span><span class="badge badge-sage">done</span></div>';
+  }).join('');
+}
+
+// ── WATER ──
+function buildDrops(){
+  var g=document.getElementById('wdrops'); if(!g) return;
+  g.innerHTML='';
+  for(var i=0;i<8;i++){
+    (function(idx){
+      var b=document.createElement('button');
+      b.className='drop'+(idx<S.wc?' filled':'');
+      b.textContent=idx<S.wc?'💧':'';
+      b.onclick=function(){
+        S.wc = idx<S.wc ? idx : idx+1;
+        save(); buildDrops(); updateWater(); updateStats();
+      };
+      g.appendChild(b);
+    })(i);
+  }
+}
+function updateWater(){
+  var wc=document.getElementById('wcnt'); if(wc) wc.textContent=S.wc;
+  var wg=document.getElementById('wgoal-txt'); if(wg) wg.textContent=S.wg;
+  var wp=document.getElementById('wprog'); if(wp) wp.style.width=Math.min(100,(S.wc/S.wg)*100)+'%';
+  var tips=['build the habit — start with 1 bottle 🌊','almost there! one more sip 💧','hydration goal hit! glowing ✨','going above and beyond — your skin is thriving 💙'];
+  var ti=S.wc>=S.wg+1?3:S.wc>=S.wg?2:S.wc===S.wg-1?1:0;
+  var wt=document.getElementById('wtip'); if(wt) wt.textContent=tips[ti];
+}
+function wGoal(d){ S.wg=Math.max(1,Math.min(8,S.wg+d)); save(); buildDrops(); updateWater(); }
+function qWater(){ S.wc=Math.min(8,S.wc+1); save(); buildDrops(); updateWater(); updateStats(); }
+function lemonToggle(){
+  S.lemon=!S.lemon;
+  var b=document.getElementById('lemon-btn'); if(b) b.classList.toggle('done',S.lemon);
+  save();
+}
+
+// ── WEIGHT ──
+function addWeight(){
+  var v=parseFloat(document.getElementById('winput').value);
+  if(isNaN(v)||v<80||v>250){ alert('enter a valid weight 🌸'); return; }
+  var d=new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+  S.weights.push({w:v,d:d});
+  document.getElementById('winput').value='';
+  save(); renderWeights();
+}
+function renderWeights(){
+  var tb=document.getElementById('wlog-body'); if(!tb) return;
+  if(!S.weights.length){ tb.innerHTML='<tr><td colspan="3" style="text-align:center;color:var(--latte);padding:16px;font-size:13px;">starting: ~120 lbs · log your first entry above 🌸</td></tr>'; return; }
+  tb.innerHTML=S.weights.map(function(e,i){
+    var prev=i===0?120:S.weights[i-1].w;
+    var diff=(e.w-prev).toFixed(1);
+    var cls=diff<0?'wt-neg':diff>0?'wt-pos':'';
+    var ds=diff==0?'—':(diff>0?'+':'')+diff+' lbs';
+    return '<tr><td>'+e.d+'</td><td><strong>'+e.w+' lbs</strong></td><td class="'+cls+'">'+ds+'</td></tr>';
+  }).join('');
+}
+
+// ── STREAK ──
+function buildStreak(){
+  var el=document.getElementById('streak-wrap'); if(!el) return;
+  var days=['mon','tue','wed','thu','fri','sat','sun'];
+  var td=new Date().getDay(); var ti=td===0?6:td-1;
+  el.innerHTML=days.map(function(d,i){
+    var cls=S.streak[i]?'done':i===ti?'today':'';
+    return '<div class="streak-col" onclick="toggleStreak('+i+')">'
+      +'<div class="streak-dot'+' '+(S.streak[i]?'done':i===ti?'today':'')+'"></div>'
+      +'<div class="streak-label">'+d+'</div></div>';
+  }).join('');
+}
+function toggleStreak(i){ S.streak[i]=!S.streak[i]; save(); buildStreak(); }
+
+// ── STATS ──
+function updateStats(){
+  var tc=S.foods.reduce(function(a,f){ return a+f.c; },0);
+  var tp=S.foods.reduce(function(a,f){ return a+f.p; },0);
+  var today=new Date().toDateString();
+  var exc=S.exs.filter(function(e){ return e.d===today; }).length+(S.treads.length?1:0);
+  var hc=Object.values(S.habits).filter(Boolean).length+S.chips.filter(Boolean).length;
+
+  var sc=document.getElementById('s-cal'); if(sc) sc.textContent=Math.round(tc);
+  var sw=document.getElementById('s-water'); if(sw) sw.textContent=S.wc;
+  var se=document.getElementById('s-ex'); if(se) se.textContent=exc;
+  var sh=document.getElementById('s-habits'); if(sh) sh.textContent=hc;
+
+  var sct=document.getElementById('snap-cal-txt'); if(sct) sct.textContent=Math.round(tc)+' / 1,400';
+  var scb=document.getElementById('snap-cal-bar'); if(scb){ scb.style.width=Math.min(100,(tc/1400)*100)+'%'; }
+  var spt=document.getElementById('snap-prot-txt'); if(spt) spt.textContent=Math.round(tp)+' / 85g';
+  var spb=document.getElementById('snap-prot-bar'); if(spb) spb.style.width=Math.min(100,(tp/85)*100)+'%';
+}
+
+function updateAll(){
+  renderFoods(); renderExLog(); buildDrops(); updateWater();
+  renderWeights(); buildStreak(); updateStats();
+  var lb=document.getElementById('lemon-btn'); if(lb) lb.classList.toggle('done',S.lemon);
+}
+
+// ── INIT ──
+load();
+setDate();
+restoreChips();
+restoreHabits();
+updateAll();
+</script>
+</body>
+</html>
